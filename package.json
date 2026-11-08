@@ -1,0 +1,10 @@
+{
+  "name": "gg-land-cs2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GG_LAND CS2 community links and private admin panel",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" },
+  "dependencies": { "express": "^4.21.2" }
+}
