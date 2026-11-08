@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>GG_LAND | CS2 Community</title>
+<style>
+:root{--gold:#e5bd62;--gold2:#a77b28;--bg:#090909;--panel:#151515;--muted:#aaa}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#30230d 0,#090909 48%);color:#f7f2e7;font-family:Tahoma,Arial,sans-serif;min-height:100vh}
+header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #4b391b;background:#090909c9}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px;color:var(--gold)}nav a{color:#ddd;text-decoration:none;margin-right:22px;font-size:14px}
+.hero{text-align:center;padding:88px 18px 72px}.eyebrow{color:var(--gold);letter-spacing:4px;font-size:12px}.hero h1{font-size:clamp(42px,8vw,76px);margin:15px 0;color:var(--gold);text-shadow:0 4px 35px #a77b2855}.hero p{color:#c4bdaF;line-height:2}
+.btn{border:0;border-radius:7px;background:linear-gradient(120deg,#f2d88f,#b88730);color:#17120a;font-weight:bold;padding:13px 24px;cursor:pointer;text-decoration:none;display:inline-block}
+section{padding:38px 7%;text-align:center}h2{color:var(--gold);font-size:27px}.sub{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:920px;margin:28px auto}
+.card{background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid #6a5125;border-radius:13px;padding:27px 18px;box-shadow:0 12px 35px #0007}
+.card h3{color:var(--gold);font-size:22px;margin:5px}.price{font-size:28px;font-weight:bold;margin:18px;color:#f5d88f}.card p{color:#bbb;line-height:2;font-size:14px}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:25px auto;max-width:850px}
+.link{border:1px solid #765a29;background:#171717;color:var(--gold);padding:15px 23px;border-radius:9px;text-decoration:none;min-width:150px}
+.empty{color:#777;padding:20px}.admin-wrap{max-width:650px;margin:25px auto;text-align:right;background:#121212;border:1px solid #4d3b1e;border-radius:12px;padding:22px}
+input{width:100%;padding:13px;margin:7px 0 13px;background:#090909;color:#fff;border:1px solid #51401f;border-radius:7px;font:inherit}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row input{flex:1;min-width:180px}.small{padding:9px 13px;font-size:12px}.danger{background:#642b25;color:white}.item{display:flex;justify-content:space-between;gap:12px;align-items:center;border-bottom:1px solid #333;padding:12px 0}.item a{color:var(--gold);overflow-wrap:anywhere}
+#admin{display:none}footer{text-align:center;padding:28px;color:#777;border-top:1px solid #342817;margin-top:35px;font-size:12px}
+@media(max-width:600px){header{padding:0 5%}nav a{margin-right:10px;font-size:12px}.hero{padding-top:65px}.item{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="logo">GG_LAND</div><nav><a href="#vip">VIP SHOP</a><a href="#links">لینک‌ها</a><a href="#admin">مدیریت</a></nav></header>
+<main>
+<div class="hero"><div class="eyebrow">COUNTER-STRIKE 2 COMMUNITY</div><h1>GG_LAND</h1><p>به کامیونیتی GG_LAND خوش اومدی.<br>برای ورود به لینک‌های ما و دیدن رنک VIP آماده‌ای؟</p><a class="btn" href="#vip">مشاهده VIP</a></div>
+<section id="vip"><h2>VIP SHOP</h2><p class="sub">عضویت ویژه کامیونیتی GG_LAND</p><div class="cards"><article class="card"><h3>VIP</h3><p>دسترسی به رنک ویژه GG_LAND</p><div class="price">۷۵,۰۰۰ تومان</div><a class="btn" href="#links">اطلاعات خرید</a></article></div><p class="sub">برای فعال‌سازی خرید، راه ارتباطی مدیر باید در بخش لینک‌ها اضافه شود.</p></section>
+<section id="links"><h2>لینک‌های GG_LAND</h2><p class="sub">لینک‌های رسمی کامیونیتی</p><div class="links" id="publicLinks"><div class="empty">هنوز لینکی اضافه نشده است.</div></div></section>
+<section id="admin"><h2>پنل مدیریت</h2><p class="sub">این بخش فقط با رمز مدیر قابل استفاده است.</p><div class="admin-wrap">
+<div id="loginBox"><label>رمز مدیریت</label><input id="password" type="password" placeholder="رمز عبور مدیر"><button class="btn" onclick="login()">ورود به مدیریت</button></div>
+<div id="manageBox" style="display:none"><h3 style="color:var(--gold)">افزودن لینک جدید</h3><label>عنوان لینک</label><input id="linkTitle" placeholder="مثلاً دیسکورد"><label>آدرس لینک</label><input id="linkUrl" placeholder="https://example.com"><button class="btn" onclick="addLink()">افزودن لینک</button><div id="adminLinks"></div><p><button class="btn danger small" onclick="logout()">خروج از پنل</button></p></div>
+<p id="message" class="sub"></p></div></section>
+</main>
+<footer>GG_LAND © 2026 · CS2 COMMUNITY</footer>
+<script>
+const $=id=>document.getElementById(id);
+async function api(url,opts={}){const r=await fetch(url,{...opts,headers:{'Content-Type':'application/json',...(opts.headers||{})}});const d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.error||'خطا در ارتباط با سرور');return d}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function loadLinks(){try{const links=await api('/api/links');$('publicLinks').innerHTML=links.length?links.map(x=>`<a class="link" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a>`).join(''):'<div class="empty">هنوز لینکی اضافه نشده است.</div>';$('adminLinks').innerHTML=links.map(x=>`<div class="item"><span>${esc(x.title)}<br><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.url)}</a></span><button class="btn danger small" onclick="removeLink('${x.id}')">حذف</button></div>`).join('')}catch(e){$('message').textContent=e.message}}
+async function login(){try{await api('/api/login',{method:'POST',body:JSON.stringify({password:$('password').value})});$('loginBox').style.display='none';$('manageBox').style.display='block';$('message').textContent='';loadLinks()}catch(e){$('message').textContent=e.message}}
+async function addLink(){try{await api('/api/links',{method:'POST',body:JSON.stringify({title:$('linkTitle').value,url:$('linkUrl').value})});$('linkTitle').value='';$('linkUrl').value='';$('message').textContent='لینک اضافه شد.';loadLinks()}catch(e){$('message').textContent=e.message}}
+async function removeLink(id){if(!confirm('این لینک حذف شود؟'))return;try{await api('/api/links/'+id,{method:'DELETE'});loadLinks()}catch(e){$('message').textContent=e.message}}
+async function logout(){await api('/api/logout',{method:'POST'});$('manageBox').style.display='none';$('loginBox').style.display='block';$('password').value=''}
+(async()=>{loadLinks();try{const s=await api('/api/admin-check');if(s.admin){$('loginBox').style.display='none';$('manageBox').style.display='block'}}catch{}})();
+</script>
+</body></html>
